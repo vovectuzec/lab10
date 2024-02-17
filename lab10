@@ -1,0 +1,17 @@
+Запиши відповідь на питання у файл та вкажи своє Ім'я та Прізвище
+
+file_name = "questions.txt"
+
+try:
+    # Відкриття файлу у режимі запису
+    with open(file_name, "w") as file:
+        # Запис прізвища та питання у файл
+        file.write("Прізвище: Кирилов\n")
+        file.write("Питання: Що таке програмування?\n")
+    print("Дані успішно записано у файл.")
+except FileNotFoundError:
+    print(f"Помилка: Файл {file_name} не знайдено або не може бути створений.")
+except PermissionError:
+    print(f"Помилка: Немає дозволу на запис у файл {file_name}.")
+except Exception as e:
+    print(f"Сталася помилка під час запису даних у файл: {e}")
